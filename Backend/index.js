@@ -20,7 +20,10 @@ app.get("/ping",(req,res)=>{
 })
 //connect to mongoDB
 try {
-  mongoose.connect(URI)
+  mongoose.connect(URI , {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
   console.log("connected to mongodb");
 } catch (error) {
   console.log("error:", error);
